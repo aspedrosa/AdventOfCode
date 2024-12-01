@@ -14,7 +14,7 @@ def puzzle1(lines):
 
     total = sum(abs(l1 - l2) for l1, l2 in zip(l1, l2))
 
-    print(total)
+    return total
 
 
 def puzzle2(lines):
@@ -24,4 +24,4 @@ def puzzle2(lines):
     for l in left:
         total_score += l * right.count(l)
 
-    print(total_score)
+    return total_score

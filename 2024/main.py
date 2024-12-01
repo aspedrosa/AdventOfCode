@@ -16,7 +16,9 @@ def main():
     solution_module = importlib.import_module(f"solutions.day{DAY}")
     solution_function = getattr(solution_module, f"puzzle{PUZZLE}")
 
-    solution_function(lines)
+    solution = solution_function(lines)
+
+    print(solution)
 
 
 if __name__ == '__main__':
