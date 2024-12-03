@@ -2,13 +2,21 @@ import importlib
 import os.path
 
 SAMPLE = False
-DAY = 1
+DAY = 3
 PUZZLE = 2
 
 
 def main():
     directory = "samples" if SAMPLE else "inputs"
-    with open(os.path.join(directory, f"day{DAY}.txt")) as f:
+    try:
+        f = open(os.path.join(directory, f"day{DAY}.txt"))
+    except FileNotFoundError:
+        if SAMPLE:
+            f = open(os.path.join(directory, f"day{DAY}_puzzle{PUZZLE}.txt"))
+        else:
+            raise
+
+    with f:
         lines = f.readlines()
         lines = [l.strip() for l in lines]
         lines = [l for l in lines if l]
