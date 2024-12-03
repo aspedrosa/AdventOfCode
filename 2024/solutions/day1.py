@@ -21,7 +21,11 @@ def puzzle2(lines):
     left, right = _parse_input(lines)
 
     total_score = 0
+    count_cache = {}
     for l in left:
-        total_score += l * right.count(l)
+        if l not in count_cache:
+            count_cache[l] = right.count(l)
+        total_score += l * count_cache[l]
 
+    # 23529853
     return total_score
