@@ -21,7 +21,7 @@ def puzzle1(lines):
 
 def puzzle2(lines):
     ops_pattern = re.compile(r"(?:mul\(\d+,\d+\))|(?:do\(\))|(?:don't\(\))")
-    numbers_patter = re.compile(r"(\d+),(\d+)")
+    numbers_pattern = re.compile(r"(\d+),(\d+)")
     total = 0
     mul_enabled = True
     for line in lines:
@@ -34,7 +34,7 @@ def puzzle2(lines):
                 mul_enabled = False
             elif mul_enabled:
                 mul = line[regs[0]:regs[1]]
-                nums = numbers_patter.findall(mul)
+                nums = numbers_pattern.findall(mul)
                 nums = nums[0]
                 total += int(nums[0]) * int(nums[1])
 
