@@ -14,6 +14,7 @@ def puzzle1(lines):
 
     total = sum(abs(l1 - l2) for l1, l2 in zip(l1, l2))
 
+    # 1388114
     return total
 
 
