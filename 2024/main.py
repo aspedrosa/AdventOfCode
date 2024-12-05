@@ -1,8 +1,8 @@
 import importlib
 import os.path
 
-SAMPLE = False
-DAY = 3
+SAMPLE = 0
+DAY = 5
 PUZZLE = 2
 
 
@@ -19,7 +19,7 @@ def main():
     with f:
         lines = f.readlines()
         lines = [l.strip() for l in lines]
-        lines = [l for l in lines if l]
+        #lines = [l for l in lines if l]
 
     solution_module = importlib.import_module(f"solutions.day{DAY}")
     solution_function = getattr(solution_module, f"puzzle{PUZZLE}")
