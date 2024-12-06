@@ -54,7 +54,7 @@ def puzzle2(lines):
         correct_order, (i, j) = _correct_order(rules, update)
         if not correct_order:
             while not correct_order:
-                # swap elements that are wrong. lets hope that cicles wont exist. maybe its impossible for them to exist
+                # swap elements that are wrong. lets hope that cycles wont exist. maybe its impossible for them to exist
                 tmp = update[i]
                 update[i] = update[j]
                 update[j] = tmp
